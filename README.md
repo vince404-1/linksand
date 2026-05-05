@@ -1,4 +1,4 @@
-## 系统架构图(AI生成，非100%完整)
+## 系统架构图(AI生成)
 
 ```mermaid
 graph TD
@@ -8,7 +8,7 @@ graph TD
     end
 
     subgraph 服务1: 消息接收与预处理器
-        Receiver[app.py /wechatrevice]
+        Receiver[app.py /Revice]
         Note1[验证签名 / 接收XML<br/>立即返回success<br/>守护线程异步转发]
     end
 
