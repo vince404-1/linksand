@@ -1,4 +1,4 @@
-## 系统架构图
+## 系统架构图(AI生成，非100%完整)
 
 ```mermaid
 graph TD
@@ -35,8 +35,9 @@ graph TD
 
     User <-->|消息/语音/事件| WXServer
     WXServer -->|POST XML 带签名| Receiver
-    Receiver -.->|写日志| COS2
-    Receiver -.->|存语音| COS6
+    Receiver -->|立即返回success| WXServer
+    Receiver -.->|异步写日志/存语音| COS2
+    Receiver -.->|异步写日志/存语音| COS6
     Scheduler -.->|读取日志| COS2
     Scheduler -->|并发请求推理| API
     API --> Agent
